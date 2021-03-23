@@ -1,3 +1,5 @@
+package Appium;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -27,7 +29,7 @@ public class A_Base {
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         //desiredCapabilities.setCapability("automationName", "UiAutomator");
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Husamettin\\IdeaProjects\\mobilTesting\\src\\Apps\\GestureTool (1).apk");
-        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
+        desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
 
         AndroidDriver<WebElement> driver = new AndroidDriver<WebElement>(new URL("http:127.0.0.1:4723/wd/hub"), desiredCapabilities);
 
