@@ -49,4 +49,7 @@ public class Call {
 
         close.click();
 
-}}
+        driver.quit();
+
+}
+}
