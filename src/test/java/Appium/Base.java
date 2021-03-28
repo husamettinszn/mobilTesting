@@ -20,7 +20,7 @@ public class Base {
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET,"true");
         URL url = new URL("http://127.0.0.1:4723/wd/hub"); //http://localhost:4723/wd/hub
         AndroidDriver<WebElement> driver = new AndroidDriver<>(url,desiredCapabilities);
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         return driver;
     }
     public static IOSDriver<IOSElement> lunchiOS() throws MalformedURLException {
