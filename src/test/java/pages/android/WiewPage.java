@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class WiewPage {
 
@@ -15,4 +16,7 @@ public class WiewPage {
     }
     @AndroidFindBy(xpath = "//*[@text='Views']")
     public WebElement wievs;
+
+    @AndroidFindBy(xpath = "//*[@text='Tabs']")
+    public List<WebElement> tabs;
 }
