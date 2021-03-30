@@ -8,13 +8,11 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class ApiDemosPage {
+public class WiewPage {
 
-    public ApiDemosPage(){
+    public  WiewPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)), this);
-
     }
-    @AndroidFindBy(xpath = "//*[@text='Preference']")
-    public WebElement prefecence;
-
+    @AndroidFindBy(xpath = "//*[@text='Views']")
+    public WebElement wievs;
 }
