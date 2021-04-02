@@ -19,7 +19,7 @@ public class DragAndDropStepDefinitions {
 
     @Given("kullanici wiev sayfasina gider")
     public void kullanici_wiev_sayfasina_gider() {
-        wiewPage.wievs.click();
+        apiDemosPage.wievs.click();
     }
 
     @Given("kullanici drag and drop sayfasina gider")

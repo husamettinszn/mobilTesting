@@ -14,9 +14,10 @@ public class WiewPage {
     public  WiewPage(){
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)), this);
     }
-    @AndroidFindBy(xpath = "//*[@text='Views']")
-    public WebElement wievs;
 
     @AndroidFindBy(xpath = "//*[@text='Tabs']")
     public List<WebElement> tabs;
+
+    @AndroidFindBy(xpath = "//*[@text='WebView']")
+    public WebElement webViev;
 }
