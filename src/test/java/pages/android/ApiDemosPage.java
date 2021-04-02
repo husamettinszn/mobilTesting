@@ -17,4 +17,7 @@ public class ApiDemosPage {
     @AndroidFindBy(xpath = "//*[@text='Preference']")
     public WebElement prefecence;
 
+    @AndroidFindBy(xpath = "//*[@text='Views']")
+    public WebElement wievs;
+
 }
