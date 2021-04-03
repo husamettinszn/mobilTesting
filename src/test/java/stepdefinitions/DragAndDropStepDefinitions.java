@@ -5,17 +5,16 @@ import io.appium.java_client.touch.offset.ElementOption;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import pages.android.ApiDemosPage;
 import pages.android.DragAndDropPage;
-import pages.android.WiewPage;
+import pages.android.ViewPage;
 import utilities.Driver;
 
 public class DragAndDropStepDefinitions {
 
     ApiDemosPage apiDemosPage = new ApiDemosPage();
     DragAndDropPage dragAndDropHome = new DragAndDropPage();
-    WiewPage wiewPage = new WiewPage();
+    ViewPage wiewPage = new ViewPage();
 
     @Given("kullanici wiev sayfasina gider")
     public void kullanici_wiev_sayfasina_gider() {
