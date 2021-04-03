@@ -8,7 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import pages.android.WiewPage;
+import pages.android.ViewPage;
 import utilities.Driver;
 
 import java.time.Duration;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ScrollingStepDefinitions {
 
-    WiewPage wiewPage = new WiewPage();
+    ViewPage wiewPage = new ViewPage();
 
     @Given("kullanici Tabs sayfasina gider")
     public void kullanici_tabs_sayfasina_gider() {

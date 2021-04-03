@@ -8,6 +8,6 @@ Feature: Appium Test
 
     And kullanici Tabs sayfasina gider
 
-  Scenario: Scrolling TouchAction
+  Scenario: Scrolling TouchAction2
 
     And kullanici webViewsayfasina gider
