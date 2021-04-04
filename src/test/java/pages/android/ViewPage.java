@@ -19,6 +19,9 @@ public class ViewPage {
     @AndroidFindBy(xpath = "//*[@text='Tabs']")
     public List<WebElement> tabs;
 
+    @AndroidFindBy(xpath = "//*[@text='Tabs']")
+    public WebElement tabs1;
+
     @AndroidFindBy(xpath = "//*[@text='WebView']")
     public WebElement webViev;
 
@@ -30,5 +33,8 @@ public class ViewPage {
 
     @AndroidFindBy(xpath = "//*[@class='android.widget.TextView']")
     public WebElement sayi;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Popup Menu']")
+    public WebElement popupMenu;
 
 }
