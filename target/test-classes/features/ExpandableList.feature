@@ -6,4 +6,4 @@ Feature: Expandable List
     And kullanici Custom Adaptoer linkine tiklar
     And kullanici People Names linkine uzun basar
     And kullanici Sample action popup ina tiklar
-    Then kullanici toast mesajini verify eder
+    Then kullanici toast mesajinin "People Names" icerdigini verify eder
