@@ -23,5 +23,4 @@ public class ToastItemAddPage {
     @AndroidFindBy(xpath = "//android.widget.Toast")
     public WebElement toastMessage;
 
-
 }
