@@ -1,3 +1,4 @@
+@switch
 Feature: Toast Item Add
   Scenario: Menu Item Add
     Given kullanici API Demos sayfasina gider

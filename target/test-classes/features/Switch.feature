@@ -1,4 +1,4 @@
-@switch
+
   Feature: appium test
       Scenario: Switch
         #on kosul app acilmis olacak

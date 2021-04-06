@@ -1,3 +1,4 @@
+
 Feature: UiScrollable
   Scenario: Scroollong textswitcher a kadar
     Given kullanici API Demos sayfasina gider
