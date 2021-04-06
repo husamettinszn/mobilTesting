@@ -14,6 +14,7 @@ public class HomePage {
 
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(30)), this);
     }
-    @AndroidFindBy(xpath = "(//*[@class='android.widget.TextView'])[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='API Demos']")
+
     public WebElement apiDemos;
 }
