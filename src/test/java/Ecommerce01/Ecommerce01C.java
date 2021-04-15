@@ -2,6 +2,7 @@ package Ecommerce01;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -10,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-public class Ecommerce01ShoppingB {
+public class Ecommerce01C {
     @Test
     public void test1() throws MalformedURLException, InterruptedException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -58,7 +59,27 @@ public class Ecommerce01ShoppingB {
             }
         }
 
+        driver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
 
+        List<WebElement> productPrices = driver.findElementsById("com.androidsample.generalstore:id/productPrice");
+
+        String ilkAyakkabi= productPrices.get(0).getText();
+        System.out.println(ilkAyakkabi);
+        String ikinciAyakkabi = productPrices.get(1).getText();
+        System.out.println(ikinciAyakkabi);
+
+        double f1 = Double.parseDouble(ilkAyakkabi.substring(1));
+        double f2 = Double.parseDouble(ikinciAyakkabi.substring(1));
+        double sonuc = f1 + f2;
+        String expectedTutar = String.valueOf((sonuc));
+
+        WebElement toplamFiyat = driver.findElementById("com.androidsample.generalstore:id/totalAmountLbl");
+        String toplamFiyatText = toplamFiyat.getText();
+        double topF = Double.parseDouble(toplamFiyatText.substring(1));
+
+        String actualTutar = String.valueOf(topF);
+
+        Assert.assertEquals(expectedTutar,actualTutar, 0.0);
+        }
 
     }
-}
