@@ -61,6 +61,8 @@ public class Ecommerce01C {
 
         driver.findElementById("com.androidsample.generalstore:id/appbar_btn_cart").click();
 
+        Thread.sleep(1000);
+
         List<WebElement> productPrices = driver.findElementsById("com.androidsample.generalstore:id/productPrice");
 
         String ilkAyakkabi= productPrices.get(0).getText();
