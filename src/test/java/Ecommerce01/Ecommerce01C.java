@@ -80,8 +80,10 @@ public class Ecommerce01C {
         double topF = Double.parseDouble(toplamFiyatText.substring(1));
 
         String actualTutar = String.valueOf(topF);
+        System.out.println(actualTutar);
 
-        Assert.assertEquals(expectedTutar,actualTutar, 0.0);
+        Assert.assertEquals(expectedTutar,actualTutar);
+        Assert.assertEquals(sonuc, topF, 0.0); // 0.1 + 0.2 = 0.3 ama bilgisayar 0.300000000004 hesapliyor. O yüzden delta 0.0 koyuyoruz.
         }
 
     }
