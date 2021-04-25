@@ -101,12 +101,13 @@ public class Ecommerce01WebView {
 
         action.tap(TapOptions.tapOptions().withElement(ElementOption.element(visitButton))).perform();
 
+
         Set context = driver.getContextHandles();
         for (Object contextName : context) {
             System.out.println(contextName);
             Thread.sleep(2000);
 
-            if (contextName.toString().contains("CHROMIUM")){
+            if (contextName.toString().contains("WEBVIEW")){
                 driver.context((String) contextName);
             }
         }
