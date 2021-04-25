@@ -6,8 +6,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.cucumber.java.an.E;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,7 +17,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 public class Ecommerce01WebView {
 
@@ -80,15 +84,32 @@ public class Ecommerce01WebView {
         }
 
         WebElement terms = driver.findElementById("com.androidsample.generalstore:id/termsButton");
-        action.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(terms))).perform();
+        action.longPress(ElementOption.element(terms)).perform();
+
+        //action.press(ElementOption.element(terms)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3))).release().perform();
+
+        //press yapip waitaction da kullanilabilir
+
 
         WebElement closeButton = driver.findElementById("android:id/button1");
+
+        Assert.assertTrue("Mesaj gorunmedi", closeButton.isDisplayed());
 
         action.tap(TapOptions.tapOptions().withElement(ElementOption.element(closeButton))).perform();
 
         WebElement visitButton = driver.findElementById("com.androidsample.generalstore:id/btnProceed");
 
         action.tap(TapOptions.tapOptions().withElement(ElementOption.element(visitButton))).perform();
+
+        Set context = driver.getContextHandles();
+        for (Object contextName : context) {
+            System.out.println(contextName);
+            Thread.sleep(2000);
+
+            if (contextName.toString().contains("CHROMIUM")){
+                driver.context((String) contextName);
+            }
+        }
 
     }
 }
