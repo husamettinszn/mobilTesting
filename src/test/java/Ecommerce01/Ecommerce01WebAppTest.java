@@ -2,27 +2,22 @@ package Ecommerce01;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
-import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
-import io.cucumber.java.an.E;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-public class Ecommerce01WebView {
-
+public class Ecommerce01WebAppTest {
     @Test
     public void test1() throws MalformedURLException, InterruptedException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -37,7 +32,6 @@ public class Ecommerce01WebView {
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Husamettin\\IdeaProjects\\mobilTesting\\src\\Apps\\General-Store (1).apk");
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
         desiredCapabilities.setCapability("chromedriverExecutable", "C:\\Users\\Husamettin\\IdeaProjects\\mobilTesting\\driver\\chromedriver.exe");
-
 
         AndroidDriver<WebElement> driver = new AndroidDriver<WebElement>(new URL("http:127.0.0.1:4723/wd/hub"), desiredCapabilities);
 
@@ -63,9 +57,9 @@ public class Ecommerce01WebView {
 
         List<WebElement> items1 = driver.findElementsById("com.androidsample.generalstore:id/productName");
 
-        for (int i=0; i<items1.size(); i++){
+        for (int i = 0; i < items1.size(); i++) {
             String producktName = driver.findElementsById("com.androidsample.generalstore:id/productName").get(i).getText();
-            if (producktName.equals("Jordan Lift Off")){
+            if (producktName.equals("Jordan Lift Off")) {
                 driver.findElementsByXPath("//android.widget.TextView[@text='ADD TO CART']").get(i).click();
                 break;
 
@@ -79,7 +73,7 @@ public class Ecommerce01WebView {
         TouchAction action = new TouchAction(driver);
 
         List<WebElement> checkBox = driver.findElementsByAndroidUIAutomator("UiSelector().text(\"Send me e-mails on discounts related to selected products in future\").checked(false)");
-        if (checkBox.size()>0) {
+        if (checkBox.size() > 0) {
 
 
             action.tap(TapOptions.tapOptions().withElement(ElementOption.element(checkBox.get(0)))).perform();
@@ -109,9 +103,13 @@ public class Ecommerce01WebView {
             System.out.println(contextName);
             Thread.sleep(2000);
 
-           driver.context("WEBVIEW_com.androidsample.generalstore");
+            if (contextName.toString().contains("WEBVIEW")) {
+                driver.context((String) contextName);
+            }
         }
 
+        //key aktivitelerini bu kod ile yapabiliriz
+        //driver.pressKey(new KeyEvent(AndroidKey.BACK));
 
     }
 }
